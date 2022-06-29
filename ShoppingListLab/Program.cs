@@ -22,11 +22,11 @@ Console.WriteLine("Here is our menu at the CandyShack");
 while(orderMore)
 {
     //Display menu
-    Console.WriteLine("Item \t Price");
+    Console.WriteLine(String.Format("{0,-20} | {1,-20}", "Item", "Price"));
     Console.WriteLine("===============================");
     foreach (KeyValuePair<string, double> kvp in menu)
     {
-        Console.WriteLine($"{kvp.Key}: \t ${kvp.Value}");
+        Console.WriteLine(String.Format("{0,-20} | {1,-20}", $"{kvp.Key}", $"${kvp.Value}"));
     }
 
     Console.WriteLine("What would you like to buy?");
@@ -64,10 +64,11 @@ while(orderMore)
 }
 Console.WriteLine("Thanks for your order!");
 Console.WriteLine("Here's what you got:");
+Console.WriteLine("===============================");
 
 foreach (string i in shoppingList)
 {
-    Console.WriteLine($"{i} \t ${menu[i]}");
+    Console.WriteLine(String.Format("{0,-20} | {1,-20}", $"{i}", $"${menu[i]}"));
     cartTotal += menu[i];
 }
 
